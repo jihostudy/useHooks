@@ -7,6 +7,7 @@ const baseConfig = {
   outdir: "dist", // 컴파일된 파일이 저장될 경로
   bundle: true, // 번들링 여부
   sourcemap: false, // 소스맵 생성 여부
+  external: ["react", "react-dom"], // React와 ReactDOM을 외부 종속성으로 설정
 };
 Promise.all([
   // 한 번은 cjs
