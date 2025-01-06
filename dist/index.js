@@ -1,18 +1,19 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.add = add;
-exports.subtract = subtract;
-exports.multiply = multiply;
-exports.divide = divide;
+// src/index.ts
 function add(a, b) {
-    return a + b;
+  return a + b;
 }
 function subtract(a, b) {
-    return a - b;
+  return a - b;
 }
 function multiply(a, b) {
-    return a * b;
+  return a * b;
 }
 function divide(a, b) {
-    return a / b;
+  return a / b;
 }
+export {
+  add,
+  divide,
+  multiply,
+  subtract
+};
