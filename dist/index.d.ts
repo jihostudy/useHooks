@@ -1,8 +1,25 @@
 /**
- * Hook to close a modal when the 'Escape' key is pressed
+ * Hook to close Conditional Element when the 'Escape' key is pressed
+ *
+ *
  * @template F - The type of the callback function
  * @param value - A boolean indicating whether the modal is open
  * @param callback - A callback function to execute when 'Escape' is pressed
+ *
+ * @example
+ * const Modal = () => {
+ *  const [isOpen, setIsOpen] = useState<boolean>(false);
+ *
+ *  const handleOpen = () => {
+ *    setIsOpen(true);
+ *  }
+ *
+ *  const handleClose = () => {
+ *    setIsOpen(false);
+ *  }
+ *
+ *  useEscClose(isOpen,handleClose); // Activating this component to close on ESC
+ * }
  */
 declare const useEscClose: <F extends (...args: any[]) => any>(value: boolean, callback: F) => void;
 export default useEscClose;

@@ -1,6 +1,6 @@
 {
-  "name": "usehooks-jiho",
-  "version": "0.1.2",
+  "name": "usehooks-jihostudy",
+  "version": "0.0.1",
   "main": "dist/index.js",
   "license": "MIT",
   "scripts": {
@@ -28,10 +28,13 @@
     "esbuild": "^0.24.2",
     "eslint": "^9.17.0",
     "eslint-plugin-react-hooks": "^5.1.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
     "typescript": "^5.7.2"
   },
-  "dependencies": {
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+  "dependencies": {},
+  "peerDependencies": {
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0"
   }
 }
