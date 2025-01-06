@@ -1,5 +1,3 @@
-![usehooks-jihostudy](https://usehooks.com/meta/og.jpg)
-
 # usehooks
 
 usehooks-jihostudy는 React 기반의 Custom Hook Library입니다.
