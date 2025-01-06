@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import * as React from "react";
 
 /**
  * Hook to close Conditional Element when the 'Escape' key is pressed
@@ -23,11 +23,11 @@ import { useEffect } from "react";
  *  useEscClose(isOpen,handleClose); // Activating this component to close on ESC
  * }
  */
-const useEscClose = <F extends (...args: any[]) => any>(
+export const useEscClose = <F extends (...args: any[]) => any>(
   value: boolean,
   callback: F
 ): void => {
-  useEffect(() => {
+  React.useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (value && event.key === "Escape") {
         callback();
@@ -40,5 +40,3 @@ const useEscClose = <F extends (...args: any[]) => any>(
     };
   }, [value, callback]);
 };
-
-export default useEscClose;
