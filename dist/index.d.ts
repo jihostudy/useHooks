@@ -21,5 +21,4 @@
  *  useEscClose(isOpen,handleClose); // Activating this component to close on ESC
  * }
  */
-declare const useEscClose: <F extends (...args: any[]) => any>(value: boolean, callback: F) => void;
-export default useEscClose;
+export declare function useEscClose<F extends (...args: any[]) => any>(value: boolean, callback: F): void;

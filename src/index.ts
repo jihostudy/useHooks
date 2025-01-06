@@ -23,10 +23,10 @@ import * as React from "react";
  *  useEscClose(isOpen,handleClose); // Activating this component to close on ESC
  * }
  */
-export const useEscClose = <F extends (...args: any[]) => any>(
+export function useEscClose<F extends (...args: any[]) => any>(
   value: boolean,
   callback: F
-): void => {
+): void {
   React.useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (value && event.key === "Escape") {
@@ -39,4 +39,4 @@ export const useEscClose = <F extends (...args: any[]) => any>(
       window.removeEventListener("keydown", handleKeyDown);
     };
   }, [value, callback]);
-};
+}

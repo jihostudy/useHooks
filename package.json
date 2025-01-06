@@ -1,6 +1,7 @@
 {
   "name": "usehooks-jihostudy",
-  "version": "0.0.3",
+  "version": "0.0.4",
+  "description": "Collection of React Custom Hooks",
   "main": "dist/index.js",
   "license": "MIT",
   "scripts": {
@@ -36,5 +37,6 @@
   "peerDependencies": {
     "react": ">=18.0.0",
     "react-dom": ">=18.0.0"
-  }
+  },
+  "author": "Jiho Kim"
 }

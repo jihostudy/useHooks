@@ -1152,12 +1152,12 @@ var require_react = __commonJS({
 // src/index.ts
 var index_exports = {};
 __export(index_exports, {
-  default: () => index_default
+  useEscClose: () => useEscClose
 });
 module.exports = __toCommonJS(index_exports);
-var import_react = __toESM(require_react(), 1);
-var useEscClose = (value, callback) => {
-  (0, import_react.useEffect)(() => {
+var React = __toESM(require_react(), 1);
+function useEscClose(value, callback) {
+  React.useEffect(() => {
     const handleKeyDown = (event) => {
       if (value && event.key === "Escape") {
         callback();
@@ -1168,8 +1168,7 @@ var useEscClose = (value, callback) => {
       window.removeEventListener("keydown", handleKeyDown);
     };
   }, [value, callback]);
-};
-var index_default = useEscClose;
+}
 /*! Bundled license information:
 
 react/cjs/react.development.js:

@@ -1144,9 +1144,9 @@ var require_react = __commonJS({
 });
 
 // src/index.ts
-var import_react = __toESM(require_react(), 1);
-var useEscClose = (value, callback) => {
-  (0, import_react.useEffect)(() => {
+var React = __toESM(require_react(), 1);
+function useEscClose(value, callback) {
+  React.useEffect(() => {
     const handleKeyDown = (event) => {
       if (value && event.key === "Escape") {
         callback();
@@ -1157,10 +1157,9 @@ var useEscClose = (value, callback) => {
       window.removeEventListener("keydown", handleKeyDown);
     };
   }, [value, callback]);
-};
-var index_default = useEscClose;
+}
 export {
-  index_default as default
+  useEscClose
 };
 /*! Bundled license information:
 
