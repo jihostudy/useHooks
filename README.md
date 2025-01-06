@@ -7,8 +7,6 @@ usehooks-jihostudy는 React 기반의 Custom Hook Library입니다.
 - usehooks-jihostudy는 Typescript 타입이 내장되어 있으며, 정확한 타입으로 구현되어 있어요.
 - usehooks-jihostudy는 높은 Test Coverage을 유지하기 위해 노력하고 있어요.
 
-## Standard
-
 ### Install
 
 `npm i usehooks-jihostudy`
