@@ -1,23 +1,30 @@
 {
   "name": "usehooks-jiho",
   "version": "0.1.0",
-  "type": "module",
   "main": "dist/index.js",
   "license": "MIT",
   "scripts": {
     "prepack": "yarn build",
-    "build": "yarn build:tsc",
-    "build:tsc": "yarn tsc"
+    "build": "yarn clean && yarn build:tsc && yarn build:js",
+    "build:tsc": "yarn tsc --emitDeclarationOnly",
+    "build:js": "node build.js",
+    "clean": "rm -rf dist"
   },
+  "type": "module",
   "exports": {
     ".": {
+      "types": "./dist/index.d.ts",
       "import": "./dist/index.js",
-      "require": "./src/index.cjs",
-      "types": "./src/index.d.ts"
+      "require": "./dist/index.cjs"
     }
   },
+  "files": [
+    "dist",
+    "src"
+  ],
   "devDependencies": {
     "@types/node": "^22.10.5",
+    "esbuild": "^0.24.2",
     "typescript": "^5.7.2"
   }
 }
