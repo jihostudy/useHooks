@@ -1,5 +1,8 @@
-declare function add(a: number, b: number): number;
-declare function subtract(a: number, b: number): number;
-declare function multiply(a: number, b: number): number;
-declare function divide(a: number, b: number): number;
-export { add, subtract, multiply, divide };
+/**
+ * Hook to close a modal when the 'Escape' key is pressed
+ * @template F - The type of the callback function
+ * @param value - A boolean indicating whether the modal is open
+ * @param callback - A callback function to execute when 'Escape' is pressed
+ */
+declare const useEscClose: <F extends (...args: any[]) => any>(value: boolean, callback: F) => void;
+export default useEscClose;
