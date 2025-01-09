@@ -13,7 +13,8 @@ usehooks-jihostudy는 React 기반의 Custom Hook Library입니다.
 
 ### Hooks
 
-- useEscClose : esc로 컴포넌트를 unmount 시키는 Hook입니다.
+- useEscClose : React Hook to unmount component by Escape key
+- useOutsideClick : React Hook to unmount component by clicking outside specified ref
 
 ## License
 
