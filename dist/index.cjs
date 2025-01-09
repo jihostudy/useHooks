@@ -30,7 +30,8 @@ var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: tru
 // src/index.ts
 var index_exports = {};
 __export(index_exports, {
-  useEscClose: () => useEscClose
+  useEscClose: () => useEscClose,
+  useOutsideClick: () => useOutsideClick
 });
 module.exports = __toCommonJS(index_exports);
 var React = __toESM(require("react"), 1);
@@ -46,4 +47,28 @@ function useEscClose(value, callback) {
       window.removeEventListener("keydown", handleKeyDown);
     };
   }, [value, callback]);
+}
+function useOutsideClick(ref, func, hasBackdrop) {
+  React.useEffect(() => {
+    const handleClickOutside = (event) => {
+      const target = event.target;
+      const isOutside = ref.current && ref.current.contains && !ref.current.contains(target);
+      if (isOutside) {
+        func();
+      }
+    };
+    if (hasBackdrop || hasBackdrop === void 0) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.addEventListener("touchend", handleClickOutside);
+    }
+    return () => {
+      if (hasBackdrop || hasBackdrop === void 0) {
+        document.removeEventListener("mousedown", handleClickOutside);
+      } else {
+        document.removeEventListener("touchend", handleClickOutside);
+      }
+    };
+  }, []);
+  return ref;
 }

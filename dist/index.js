@@ -13,6 +13,31 @@ function useEscClose(value, callback) {
     };
   }, [value, callback]);
 }
+function useOutsideClick(ref, func, hasBackdrop) {
+  React.useEffect(() => {
+    const handleClickOutside = (event) => {
+      const target = event.target;
+      const isOutside = ref.current && ref.current.contains && !ref.current.contains(target);
+      if (isOutside) {
+        func();
+      }
+    };
+    if (hasBackdrop || hasBackdrop === void 0) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.addEventListener("touchend", handleClickOutside);
+    }
+    return () => {
+      if (hasBackdrop || hasBackdrop === void 0) {
+        document.removeEventListener("mousedown", handleClickOutside);
+      } else {
+        document.removeEventListener("touchend", handleClickOutside);
+      }
+    };
+  }, []);
+  return ref;
+}
 export {
-  useEscClose
+  useEscClose,
+  useOutsideClick
 };
