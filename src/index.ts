@@ -54,6 +54,9 @@ export function useOutsideClick<F extends (...args: any[]) => any, T extends HTM
       const isOutside = ref.current && ref.current.contains && !ref.current.contains(target)
       if (isOutside) {
         func()
+        if (hasBackdrop === false) {
+          event.preventDefault()
+        }
       }
     }
 
@@ -70,7 +73,6 @@ export function useOutsideClick<F extends (...args: any[]) => any, T extends HTM
       }
     }
   }, [])
-  return ref
 }
 
 // type IgnoreElementType =

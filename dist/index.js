@@ -20,6 +20,9 @@ function useOutsideClick(ref, func, hasBackdrop) {
       const isOutside = ref.current && ref.current.contains && !ref.current.contains(target);
       if (isOutside) {
         func();
+        if (hasBackdrop === false) {
+          event.preventDefault();
+        }
       }
     };
     if (hasBackdrop || hasBackdrop === void 0) {
@@ -35,7 +38,6 @@ function useOutsideClick(ref, func, hasBackdrop) {
       }
     };
   }, []);
-  return ref;
 }
 export {
   useEscClose,

@@ -1,4 +1,3 @@
-import * as React from 'react';
 import type { RefObject } from 'react';
 /**
  * Hook to close Conditional Element when the 'Escape' key is pressed
@@ -25,4 +24,4 @@ import type { RefObject } from 'react';
  */
 export declare function useEscClose<F extends (...args: any[]) => any>(value: boolean, callback: F): void;
 /** Supported event types. */
-export declare function useOutsideClick<F extends (...args: any[]) => any, T extends HTMLElement = HTMLElement>(ref: RefObject<T>, func: F, hasBackdrop?: boolean): React.RefObject<T>;
+export declare function useOutsideClick<F extends (...args: any[]) => any, T extends HTMLElement = HTMLElement>(ref: RefObject<T>, func: F, hasBackdrop?: boolean): void;
