@@ -17,4 +17,5 @@ usehooks-jihostudy는 React 기반의 Custom Hook Library입니다.
 - useOutsideClick : React Hook to unmount component by clicking outside specified ref
 
 ## License
-MIT 
+
+MIT
